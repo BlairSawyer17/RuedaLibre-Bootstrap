@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuedaLibre | Reserva tu bicicleta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../css/style.css"> --> <!-- primer CSS, enfoque primero pc -->
+    <link rel="stylesheet" href="../css/mobil-first.css"> <!-- Enfoque Mobile-first -->
+    <meta name="description" content="Reserva aquí nuestras bicicletas o agenda una de nuestras rutas por Medellín">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo"><img src="../img/Logo.png" alt="Logo de Rueda Libre" width="100"
+                class="logo-img"></a>
+
+        <input type="checkbox" id="menu">
+        <label for="menu">
+            <img src="../img/menu.png" class="menu-icon" alt="icono menú hamburguesa">
+        </label>
+
+        <nav class="nav">
+            <ul class="nav-bar">
+                <li class="nav-bar-item"><a href="../index.html">Inicio</a></li>
+                <li class="nav-bar-item"><a href="../index.html#Nosotros">Nosotros</a></li>
+                <li class="nav-bar-item"><a href="../index.html#Servicios">Servicios</a></li>
+                <li class="nav-bar-item"><a href="../index.html#Encuentranos">Contacto</a></li>
+                <li class="nav-bar-item"><a href="./tarifas.html">Tarifas</a></li>
+                <li class="nav-bar-item activo"><a href="./reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-reservas">
+
+
+
+        <section class="container container-formreservas">
+            <h2>Realiza tu reserva</h2>
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Tus datos</legend>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Ana Perez" minlength="3"
+                            title="Por favor, ingrese su nombre completo. solo se aceptan letras y espacios. Un mínimo de 3 caracteres."
+                            pattern="^[a-zA-ZáéíóúñÑÁÉÍÓÚ]+$" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoDoc">Tipo de documento</label>
+                        <select name="tipoDoc" id="tipoDoc" title="Por favor, seleccione su tipo de documento" required>
+                            <option value="" selected disabled>Tipo de documento</option>
+                            <option value="ti">Tarjeta de identidad</option>
+                            <option value="cc">Cédula de ciudadanía</option>
+                            <option value="ce">Cedula de extranjería</option>
+                        </select>
+                        <label for="numDoc">Número de documento</label>
+                        <input type="text" name="numDoc" id="numDoc" pattern="[0-9]{6,10}"
+                            title="Por favor, ingrese un número de documento válido. Solo se aceptan números del 0 al 9. Un máximo de 10 dígitos y un mínimo de 6."
+                            placeholder="1012345" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" name="correo" id="correo" placeholder="example@dominio.com" required
+                            title="Por favor, ingrese un correo electrónico válido, debe contener un '@', un dominio y una extensión válida.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input type="tel" pattern="3[0-9]{9}" name="celular" id="celular" placeholder="3001234567"
+                            required
+                            title="Por favor, ingrese un número de celular válido. Debe comenzar con '3' y contener 10 dígitos en total. Solo se aceptan números del 0 al 9.">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+
+                    <div class="form-group">
+                        <label for="fecha">Fecha Alquiler</label>
+                        <input type="date" name="fecha" id="fecha" min="2026-11-01" max="2026-12-31" required
+                            title="Por favor, seleccione una fecha válida. La fecha debe estar entre el 1 de noviembre de 2026 y el 31 de diciembre de 2026.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bicicleta">tipo de bicicleta</label>
+                        <select name="bicicleta" id="bicicleta" required
+                            title="Por favor, seleccione un tipo de bicicleta">
+                            <option value="" selected disabled>Escoge tu bicicleta</option>
+                            <option value="urbana">Urbana</option>
+                            <option value="montana">Montaña</option>
+                            <option value="electrica">Eléctrica</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="plan">Plan que quieres adquirir</label>
+                        <select name="plan" id="plan" required title="Por favor, seleccione un plan">
+                            <option value="" selected disabled>Escoge tu plan</option>
+                            <option value="hora">1 hora</option>
+                            <option value="mediodia">Mediodía</option>
+                            <option value="dia">Día completo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numBici">Número de bicicletas</label>
+                        <input type="number" name="numBici" id="numBici" step="1" min="1" max="6"
+                            title="Debes seleccionar entre 1 y 6 bicicletas" placeholder="Número de bicicletas"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guia">Escoge tu recorrido guíado</label>
+                        <select name="guia" id="guia" required title="Por favor, seleccione una opción">
+                            <option value="" selected disabled>Recorrido guiado</option>
+                            <option value="rioParques">Río y parques</option>
+                            <option value="saboresBarrio">Sabores de barrio</option>
+                            <option value="palmas">Reto palmas</option>
+                            <option value="noGuia">No quiero un recorrido guiado</option>
+                        </select>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirmación</legend>
+
+                    <div class="form-group form-group-textarea">
+                        <label for="coment">Comentarios</label>
+                        <textarea name="coment" id="coment" maxlength="300"
+                            placeholder="Déjanos aquí tu comentario"></textarea>
+                    </div>
+
+                    <div class="form-group form-group-terms">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque vel beatae sed
+                            repellendus
+                            aliquam! Beatae voluptatem esse alias inventore? Facilis assumenda voluptate id
+                            obcaecati
+                            aspernatur velit tempore minima voluptates reprehenderit!</p>
+                        <div class="form-group-checkbox">
+                            <input type="checkbox" name="terms" required
+                                title="Por favor, acepte nuestros términos y condiciones" id="terms">
+                            <label for="terms">He leído y acepto los términos y condiciones</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group-checkbox">
+                        <input type="checkbox" name="confirm" id="confirm" required
+                            title="Por favor, confirme su reserva">
+                        <label for="confirm">Confirmo que la información proporcionada es correcta y deseo realizar la
+                            reserva.</label>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="container container-horarios">
+            <div class="container-content content-horarios">
+                <h1>Reserva tu bicicleta</h1>
+                <p>Escribenos a <a href="mailto:hola@ruedalibre.example" target="_blank">hola@ruedalibre.example</a></p>
+            </div>
+
+            <aside class="container-content content-horarios-aside">
+                <dl>
+                    <dt>Lunes a Viernes</dt>
+                    <dd>De 7 a.m a 7 p.m</dd>
+
+                    <dt>Sábados, Domingos y Festivos</dt>
+                    <dd>De 6 a.m a 2 p.m</dd>
+                </dl>
+            </aside>
+        </section>
+
+        <aside class="whatsapp">
+            <a href="whatsapp://send?phone=573001234567" target="_blank" class="btn btn-whatsapp">
+                <img src="../img/whatsapp.png" alt="WhatsApp">
+                <p>Escríbenos!</p>
+            </a>
+        </aside>
+
+    </main>
+
+    <footer id="footer">
+        Rueda Libre | hola@ruedalibre.example | 2026
+    </footer>
+
+</body>
+
+</html>
