@@ -311,53 +311,53 @@ PRUEBAS FORMULARIO:
 
 Formulario de reservas - Rueda Libre
 
-   +-----------------------------+---------------------------------------------+-----------------------------------+--------------------+
-   |N.º | Campo                  | Dato de prueba                      | Resultado esperado                        | Resultado obtenido |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 01 | Nombre completo        | 123456                              | Error/Aviso, error de formato             | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 02 | Nombre completo        | Ana                                 | Bien/Sin ningún aviso                     | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 03 | Tipo de documento      | No seleccionar ninguna opción       | Error/Aviso, debe elegir una opción       | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 04 | Número de documento    | abc1234                             | Error/Aviso, error de formato             | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 05 | Número de documento    | 12345                               | Error/Aviso, debe tener mínimo 6 digítos  | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 06 | Número de documento    | 12345678901                         | Error/Aviso, debe tener máximo 10 digítos | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 07 | Correo electrónico     | ana-correo.com                      | Error/Aviso, falta @                      | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 08 | Correo electrónico     | ana@dominio                         | Error/Aviso, debe tener una extensión     | Bien/Deja continuar|
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 09 | Celular                | 1234567890                          | Error/Aviso, debe empezar con 3           | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 10 | Celular                | 300123456                           | Error/Aviso, debe tener 10 dígitos        | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 11 | Celular                | 30012345678                         | Error/Aviso, debe tener 10 dígitos        | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 12 | Fecha de alquiler      | Fecha anterior al mínimo permitido  | Error/Aviso, fecha fuera del rango        | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 13 | Fecha de alquiler      | Fecha posterior al máximo permitido | Error/Aviso, fecha fuera del rango        | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 14 | Fecha de alquiler      | No seleccionar ninguna fecha        | Error/Aviso, debe elegir una fecha        | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 15 | Tipo de bicicleta      | No seleccionar ninguna opción       | Error/Aviso, debe elegir una opción       | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 16 | Plan de alquiler       | No seleccionar ninguna opción       | Error/Aviso, debe elegir una opción       | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 17 | Número de bicicletas   | 0                                   | Error/Aviso, el número debe ser mayor a 1 | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 18 | Número de bicicletas   | 7                                   | Error/Aviso, el número debe ser menor a 6 | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 19 | Número de bicicletas   | 2.5                                 | Error/Aviso, error de formato             | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 20 | Recorrido guiado       | No seleccionar ninguna opción       | Error/Aviso, debe elegir una opción       | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 21 | Comentarios            | Texto de más de 300 caracteres      | No permite escribir más                   | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
-   | 22 | Términos y condiciones | No marcar la casilla                | Error/Aviso, debes marcar la casilla      | El esperado        |
-   +----+------------------------+-------------------------------------+-------------------------------------------+--------------------+
+   +----------------------------+-------------------------------------+---------------------------------+--------------------+
+   |N.º | Campo                 | Dato de prueba            | Resultado esperado                        | Resultado obtenido |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 01 | Nombre completo       | 123456                    | Error/Aviso, error de formato             | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 02 | Nombre completo       | Ana                       | Bien/Sin ningún aviso                     | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 03 | Tipo de documento     | No seleccionar opción     | Error/Aviso, debe elegir una opción       | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 04 | Número de documento   | abc1234                   | Error/Aviso, error de formato             | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 05 | Número de documento   | 12345                     | Error/Aviso, debe tener mínimo 6 digítos  | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 06 | Número de documento   | 12345678901               | Error/Aviso, debe tener máximo 10 digítos | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 07 | Correo electrónico    | ana-correo.com            | Error/Aviso, falta @                      | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 08 | Correo electrónico    | ana@dominio               | Error/Aviso, debe tener una extensión     | Bien/Deja continuar|
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 09 | Celular               | 1234567890                | Error/Aviso, debe empezar con 3           | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 10 | Celular               | 300123456                 | Error/Aviso, debe tener 10 dígitos        | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 11 | Celular               | 30012345678               | Error/Aviso, debe tener 10 dígitos        | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 12 | Fecha de alquiler     | Fecha anterior al mínimo  | Error/Aviso, fecha fuera del rango        | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 13 | Fecha de alquiler     | Fecha posterior al máximo | Error/Aviso, fecha fuera del rango        | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 14 | Fecha de alquiler     | No seleccionar fecha      | Error/Aviso, debe elegir una fecha        | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 15 | Tipo de bicicleta     | No seleccionar opción     | Error/Aviso, debe elegir una opción       | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 16 | Plan de alquiler      | No seleccionar  opción    | Error/Aviso, debe elegir una opción       | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 17 | Número de bicicletas  | 0                         | Error/Aviso, el número debe ser mayor a 1 | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 18 | Número de bicicletas  | 7                         | Error/Aviso, el número debe ser menor a 6 | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 19 | Número de bicicletas  | 2.5                       | Error/Aviso, error de formato             | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 20 | Recorrido guiado      | No seleccionar opción     | Error/Aviso, debe elegir una opción       | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
+   | 21 | Comentarios           | Texto de más de 300 char  | No permite escribir más                   | El esperado        |
+   +----+------------------------+--------------------------+-------------------------------------------+--------------------+
+   | 22 | Términos y condiciones| No marcar la casilla      | Error/Aviso, debes marcar la casilla      | El esperado        |
+   +----+-----------------------+---------------------------+-------------------------------------------+--------------------+
 
 
 PALETA DE COLORES.
@@ -457,3 +457,55 @@ ENFOQUE MOBILE-FIRST CORRECCIONES:
     -En el formulario, en el cajón de comentarios en la media query de 1200px, el cajón ocupaba 1fr, por lo que se veía extraño, así que usé grid-column, para ajustar su tamaño para que ocupe 2fr(todo el contenedor).
 
     -También, en la confirmación del formulario, corregí la posición del los label del checkbox para que queden alíneadas vertícalmente usando flex-box.
+
+FLOTA EN BOOTSTRAP: COMPARACIÓN.
+
+  +------------------+----------------------------------------------------------------+----------------------------------------------------------------+
+  | Comparativa      | CSS puro                                                       | Bootstrap                                                      |
+  +------------------+----------------------------------------------------------------+----------------------------------------------------------------+
+  | Tiempo invertido | 5 minutos                                                      | 30 minutos                                                     |
+  +------------------+----------------------------------------------------------------+----------------------------------------------------------------+
+  | Línea de código  | Se usó líneas más largas como "display:flex;", "display: grid; | Sus líneas fueron más cortas: "gap-4" "row" "col-12" "col-md-4"|
+  |                  | "grid-template-columns;", etc; sin contar la repetición para   | "btn", etc. Muchísimo más cortas que en CSS; pero puede tardar |
+  |                  | los breakpoints para el responsive.                            | un poco más al tener que repetirse por etiqueta a menos que lo |
+  |                  |                                                                | hagas con emmet desde el la construcción del html.             |
+  +------------------+----------------------------------------------------------------+----------------------------------------------------------------+
+  | Esfuerzo         | Tienes que ser creativo si quieres un diseño bonito, tienes    | Tiene estilos prediseñados que se pueden utilizar con sus      |
+  |                  | pensar muy bien en el diseño, la composición, los colores y    | respectivas clases lo que puede ahorrar algunos mínutos de     |
+  |                  | muchas otras cosas, por lo que si no eres muy bueno en diseño  | código.                                                        |
+  |                  | puedes terminar creando una página mediocre.                   |                                                                |
+  +------------------+----------------------------------------------------------------+----------------------------------------------------------------+
+  | Control          | Te permite tener control absoluto sobre el diseño. Desde los   | Si bien ahorra tiempo y tiene estilos prediseñados, si se      |
+  |                  | colores, los cientos de parametros, grosores, botones, filas,  | utiliza únicamente bootstrap las páginas pueden verse muy      |
+  |                  | columnas, etc. Sacrificas tiempo por diseño.                   | genéricas o similares a muchas páginas por lo que lo ideal es  |
+  |                  |                                                                | siempre utilizarlo junto a CSS.                                |
+  +------------------+----------------------------------------------------------------+----------------------------------------------------------------+
+  Nota: En mi caso me demoré mucho más con Bootstrap porque es mi primera vez usándolo cuando ya tengo mucha más experiencia con CSS y porque no utilicé las clases de "card" de Bootstrap. Sé que lo pedía el reto de manera indirecta; pero quería conservar el estilo de las cards que tengo en mi
+  CSS original, aunque solo con bootstrap me fue imposible recrearlo.
+
+  Actualización: Decidí dejar de intentar recrear mi diseño original con bootstrap y usar la clase card de Bootstrap.
+
+CLASES BOOTSTRAP:
+
+Navegando por la documentación encontré estas clases que, si bien no usé todas en esta ocasión, me parecieron interesantes.
+
+  -.hover-lift: Al pasar el mouse por la etiqueta, esta se levanta ligeramente y le da un pequeño sombreado inferior.
+
+  -.img-fluid: Hace que la imagen sea responsive, el equivalente a usar "width: 100%;" y "height: auto;" en CSS.
+
+  -.accordion: Hace un desplegable perfectamente funcional junto con las clases .accordion-item, .accordion-header y .accordion-button junto con data-bs-toggle = "colapsable" data-bs-target="#idDelElementoADesplegar" aria-expanded="true" aria-controls="idDelElementoADesplegar". Y accordion-collapse .collapse show  y data-bs-parent="#idDelDesplegable" en el elemento a desplegar.
+
+  -.btn-outline-var: Hace que los botones no tengan fondo, sino que el borde y el texto se ponen del color del tipo de variable que se le asigne, por ejempo, si se escribe class="btn btn-outline-success" entonces será verde.
+
+  -.carousel .slide: Permite crear un carrusel con flechas que permiten su movilización. Sus hijos y nietos usan: .carousel-inner, .carousel-item, .active, .carousel-contro-prev, .carousel-control-prev-icon, .carousel-contro-next, .carousel-control-next-icon y .visually-hidden
+
+TRES CONFLICTOS ENTRE bootstrap.css Y bootstrap
+
+  1. ".container" propio frente a ".container" de Bootstrap: 
+    La regla propia fijaba ancho, márgenes, padding y bordes, por lo que podía imponerse sobre el contenedor responsive de Bootstrap. Se eliminó el selector genérico y se trasladó el espaciado al marcado con utilidades como my-4, py-4 y p-4.
+
+  2. Botones propios frente a variantes Bootstrap: 
+    La regla propia .btn cargada después de Bootstrap podía pisar el fondo y el color de .btn-warning. Se limitó el estilo heredado a .btn:not(.btn-warning) y su estado hover, dejando intacta la variante amarilla de las tarjetas de flota.
+    
+  3. Enlaces, tipografía y márgenes globales: 
+    a { color: inherit } podía neutralizar el color de enlace de Bootstrap; además, el tamaño fijo del título/párrafo de la portada podía imponerse sobre display-3 y lead. Se eliminó el color heredado global y se restringió a header a; el tamaño del encabezado y el texto principal se delegó a display-3 y lead. Las utilidades mb-0 controlan los márgenes puntuales de esos párrafos.
