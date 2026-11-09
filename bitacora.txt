@@ -506,6 +506,30 @@ TRES CONFLICTOS ENTRE bootstrap.css Y bootstrap
 
   2. Botones propios frente a variantes Bootstrap: 
     La regla propia .btn cargada después de Bootstrap podía pisar el fondo y el color de .btn-warning. Se limitó el estilo heredado a .btn:not(.btn-warning) y su estado hover, dejando intacta la variante amarilla de las tarjetas de flota.
-    
+
   3. Enlaces, tipografía y márgenes globales: 
     a { color: inherit } podía neutralizar el color de enlace de Bootstrap; además, el tamaño fijo del título/párrafo de la portada podía imponerse sobre display-3 y lead. Se eliminó el color heredado global y se restringió a header a; el tamaño del encabezado y el texto principal se delegó a display-3 y lead. Las utilidades mb-0 controlan los márgenes puntuales de esos párrafos.
+
+
+MIGRACIÓN DE TARIFAS Y RESERVAS A BOOTSTRAP: COMPARATIVA FINAL
+ 
+  N°Lineas: En la versión 1.5 de Rueda Libre, el CSS(mobile-first.css) cuenta con 1129 líneas mientras que con bootstrap el css pasa a tener 769. Sin embargo, en el tiempo de ejecución todo el CSS me tomó entre 4-5 horas mientras que bootstrap me tomó unas 5 horas solamente tarifas.html, reservas.html y las secciones de ruta, flota y beneficios en index.html. Esto, porque como mencioné anteriormente, siempre he trabajado con CSS en lugar de bootstrap.
+ 
+  Resumen de la migración:
+    - tarifas.html: .row con dos columnas desde lg (col-lg-8 con las dos tablas apiladas y col-lg-4 con la información complementaria). Las tablas van en .table-responsive y conservan sus estilos (.tabla).
+    - reservas.html: formulario (col-md-8) y contacto (col-md-4). Los campos cortos usan .row g-3 con col-sm-6. Todos los atributos de validación nativa (required, pattern, min, max, minlength, maxlength, type, title) se mantuvieron sin cambios.
+ 
+  Ventajas observadas:
+    - La distribución (columnas, huecos, apilado en móvil) se resuelve con clases en el HTML y desaparece del CSS propio: no hay media queries de layout que mantener.
+    - .table-responsive, .form-control, .form-select y .form-check dan un comportamiento consistente (scroll de tablas, tamaño táctil, estados) sin reglas propias.
+    - El CSS propio quedó reducido a la identidad visual, así que es más fácil de leer y de cambiar (basta tocar las variables).
+    - Las tarjetas ahora se definen una sola vez con las variables --bs-card-*.
+ 
+  Desventajas observadas:
+    - El reboot de Bootstrap cambia cosas que antes no existían: el caption de las tablas pasa abajo (hubo que forzar caption-side: top), el legend se vuelve float y los fieldset pierden borde y padding.
+    - El HTML queda más cargado de clases (por ejemplo "card bg-white h-100", "col-12 col-sm-6") y cuesta más leerlo a primera vista.
+    - Hay que cuidar el orden de carga y la especificidad: bootstrap.css va después de Bootstrap y algunas utilidades (!important, como bg-white o rounded-3) ganan siempre.
+    - Se depende de un CDN y hay que aprender los nombres de las clases y los breakpoints.
+ 
+  Conclusión:
+    Bootstrap resuelve muy bien la distribución y los componentes repetitivos (grilla, formularios, tablas responsive), y dejar en bootstrap.css solo la identidad visual evita pelear con él. Aun así, la identidad (colores, tipografía, estados) y los ajustes al reboot siguen siendo CSS propio, por lo que lo más sensato es usar Bootstrap junto con CSS propio y no en lugar de él. Sinceramente, no soy muy buena con bootstrap, me cuesta un poco compaginar bootstrap con css y soy consiente de los errores que se tienen visualmente en esta versión beta 2-0; traté de emularlo lo más posible al css que tenía en un principio; pero me cuesta bastante por lo que no logré hacerlo. Cuando yo hago páginas, por lo general estructuro el html pensando el css que haré después, por eso mis clases y estructura tienen un proposito claro que al pasarlo a bootstrap siento que fue un poco completo y difícil de emular.
