@@ -609,14 +609,8 @@ textarea.form-control {
 
 .rutas {
     .route-image {
-        width: 100%;
         height: 190px;
         object-fit: cover;
-    }
-
-    .ruta-info {
-        background-color: var(--background-color);
-        color: var(--text-color);
     }
 
     .ruta-info h3 {
@@ -639,9 +633,62 @@ textarea.form-control {
     .ruta-precio {
         background-color: var(--secondary-color);
         color: var(--text-color);
-        font-weight: 700;
-        border-radius: 1rem;
     }
+}
+
+.flota .card,
+.rutas .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flota .card:hover,
+.rutas .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flota .card,
+    .rutas .card {
+        transition: none;
+    }
+
+    .flota .card:hover,
+    .rutas .card:hover {
+        transform: none;
+    }
+}
+
+.promociones {
+    .promo-img {
+        height: 280px;
+        object-fit: cover;
+
+        @media (min-width: 768px) {
+            height: 380px;
+        }
+    }
+
+    .carousel-caption {
+        bottom: 2.5rem;
+        padding: var(--spacing-small) var(--spacing-medium);
+        border-radius: 1rem;
+        background-color: rgba(183, 199, 189, 0.842);
+
+        p{
+            color: var(--text-color-secondary);
+        }
+
+        h3 {
+        color: var(--text-color);
+        font-size: 1.25rem;
+
+        @media (min-width: 768px) {
+            font-size: 1.75rem;
+        }
+    }
+
+
 }
 
 footer {
