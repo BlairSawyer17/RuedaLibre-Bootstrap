@@ -55,191 +55,80 @@ iframe:focus-visible {
 }
 
 
+/* ---------- Navbar ---------- */
 header {
     background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem 0;
     box-shadow: 3px 0 7px 5px rgb(177, 184, 176);
-    width: 100%;
-    position: sticky;
-    z-index: 100;
-    top: 0;
+}
 
+.navbar[data-bs-theme="dark"] {
+    --bs-navbar-padding-y: 0.25rem;
+    --bs-navbar-color: var(--surface-color);
+    --bs-navbar-hover-color: var(--text-color);
+    --bs-navbar-active-color: var(--surface-color);
 
-    .logo {
-        margin-left: var(--spacing-medium);
+    .logo-img {
+        display: block;
+        width: 90px;
 
-        .logo-img {
-            display: block;
-            width: 90px;
-
-            @media (min-width: 768px) {
-                display: inline;
-                width: 120px;
-            }
+        @media (min-width: 768px) {
+            width: 120px;
         }
     }
 
-    #menu {
-        display: none;
+    .nav-link {
+        padding: var(--spacing-medium) var(--spacing-large);
+        font-weight: 600;
+        transition: 0.4s ease;
     }
 
-    label {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        order: 1;
-        margin-right: var(--spacing-medium);
-
-        .menu-icon {
-            width: 40px;
-
-            @media (min-width: 768px) {
-                width: 50px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            display: none;
-        }
+    .nav-link:hover,
+    .nav-link:focus-visible {
+        background-color: var(--secondary-color);
     }
 
-    .nav {
-        display: flex;
-        margin-right: 0;
+    .nav-link.active {
+        box-shadow: inset 4px 0 0 var(--secondary-color);
+    }
 
-        .nav-bar {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100%;
-            display: none;
-            flex-direction: column;
-            list-style: none;
-            gap: 0;
-            text-decoration: none;
-            align-items: stretch;
-            justify-content: flex-start;
-            margin: 0;
-            padding: 0;
-            max-height: calc(100vh - 5rem);
+    .nav-link:focus-visible {
+        outline: 3px solid var(--secondary-color);
+        outline-offset: -3px;
+        box-shadow: none;
+    }
+
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            margin: var(--spacing-small) 0;
+            max-height: calc(100vh - 6rem);
             overflow-y: auto;
+            border-radius: 0.75rem;
             background-color: var(--text-color);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
-
-            .nav-bar-item {
-                font-size: 1rem;
-                margin: 0;
-                padding: 0;
-                border-radius: 0;
-                font-weight: 600;
-                transition: 0.4s ease;
-
-                a {
-                    display: block;
-                    padding: var(--spacing-medium) var(--spacing-large);
-                    color: var(--surface-color);
-                }
-
-                @media (min-width: 768px) {
-                    font-size: 1.1rem;
-                }
-
-                @media (min-width: 1200px) {
-                    font-size: 20px;
-                    margin: var(--spacing-small);
-                    padding: var(--spacing-small) var(--spacing-medium);
-                    border-radius: 40px;
-
-                    a {
-                        display: inline;
-                        padding: 0;
-                        color: inherit;
-                    }
-                }
-            }
-
-            .nav-bar-item:hover {
-                background-color: var(--secondary-color);
-
-                a {
-                    color: var(--text-color);
-                }
-
-                @media (min-width: 1200px) {
-                    background-color: var(--background-color);
-                    color: var(--text-color);
-
-                    a {
-                        color: inherit;
-                    }
-                }
-            }
-
-            .activo {
-                background-color: var(--primary-color);
-                padding: 0;
-                margin: 0;
-                color: var(--primary-color);
-                border-radius: 0;
-                box-shadow: inset 4px 0 0 var(--secondary-color);
-
-                a {
-                    color: var(--surface-color);
-                }
-
-                @media (min-width: 1200px) {
-                    background-color: var(--background-color);
-                    padding: var(--spacing-small) var(--spacing-medium);
-                    margin: var(--spacing-small);
-                    border-radius: 50px;
-                    font-size: 20px;
-                    box-shadow: none;
-
-                    a {
-                        color: inherit;
-                    }
-                }
-            }
-
-            @media (min-width: 1200px) {
-                position: static;
-                left: auto;
-                right: auto;
-                top: auto;
-                display: flex;
-                flex-direction: row;
-                gap: var(--spacing-small);
-                align-items: center;
-                justify-content: center;
-                max-height: none;
-                overflow-y: visible;
-                background-color: transparent;
-                box-shadow: none;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            margin-right: var(--spacing-medium);
         }
     }
 
-    #menu:checked~.nav .nav-bar {
-        display: flex;
-    }
+    @media (min-width: 992px) {
+        --bs-navbar-active-color: var(--text-color);
 
-    @media (min-width: 768px) {
-        padding: 0;
-    }
+        .nav-link {
+            margin: var(--spacing-small);
+            padding: var(--spacing-small) var(--spacing-medium);
+            border-radius: 40px;
+            font-size: 20px;
+        }
 
-    @media (min-width: 1200px) {
-        align-items: normal;
+        .nav-link:hover,
+        .nav-link:focus-visible,
+        .nav-link.active {
+            background-color: var(--background-color);
+        }
+
+        .nav-link.active {
+            box-shadow: none;
+        }
     }
 }
+
 
 main {
     display: flex;
@@ -346,29 +235,49 @@ main {
     }
 }
 
+/* ---------- Botones: variantes con la paleta del cliente ---------- */
 .btn {
-    display: inline-block;
-    margin-top: var(--spacing-small);
-    padding: 0.75rem 1.25rem;
-
-    border: 2px solid transparent;
-    border-radius: 25px;
-    background-color: var(--primary-color);
-    color: white;
-    font: inherit;
-    font-weight: 700;
-    line-height: 1.4;
-    text-align: center;
-    cursor: pointer;
-
-    transition: background-color 0.3s ease,
-        color 0.3s ease;
+    --bs-btn-font-weight: 700;
+    --bs-btn-border-width: 2px;
+    --bs-btn-border-radius: 25px;
+    --bs-btn-focus-box-shadow: none;
 }
 
-.btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: var(--text-color);
+    --bs-btn-hover-bg: var(--secondary-color);
+    --bs-btn-hover-border-color: var(--secondary-color);
+    --bs-btn-active-color: var(--text-color);
+    --bs-btn-active-bg: var(--secondary-color);
+    --bs-btn-active-border-color: var(--secondary-color);
 }
+
+.btn-outline-primary {
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--primary-color);
+    --bs-btn-hover-border-color: var(--primary-color);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--primary-color);
+    --bs-btn-active-border-color: var(--primary-color);
+}
+
+.btn-warning {
+    --bs-btn-color: var(--text-color);
+    --bs-btn-bg: var(--secondary-color);
+    --bs-btn-border-color: var(--secondary-color);
+    --bs-btn-hover-color: var(--text-color);
+    --bs-btn-hover-bg: var(--background-color);
+    --bs-btn-hover-border-color: var(--background-color);
+    --bs-btn-active-color: var(--text-color);
+    --bs-btn-active-bg: var(--background-color);
+    --bs-btn-active-border-color: var(--background-color);
+}
+
 
 .alquiler {
     width: 100%;
