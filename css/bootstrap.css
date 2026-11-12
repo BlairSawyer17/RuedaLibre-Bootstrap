@@ -636,6 +636,7 @@ textarea.form-control {
     }
 }
 
+/* Cards de flota y rutas: elevación al pasar el mouse */
 .flota .card,
 .rutas .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -659,6 +660,7 @@ textarea.form-control {
     }
 }
 
+/* Carrusel de promociones */
 .promociones {
     .promo-img {
         height: 280px;
@@ -673,22 +675,17 @@ textarea.form-control {
         bottom: 2.5rem;
         padding: var(--spacing-small) var(--spacing-medium);
         border-radius: 1rem;
-        background-color: rgba(183, 199, 189, 0.842);
+        background-color: rgb(32 44 37 / 0.75);
+    }
 
-        p{
-            color: var(--text-color-secondary);
-        }
-
-        h3 {
-        color: var(--text-color);
+    .carousel-caption h3 {
+        color: inherit;
         font-size: 1.25rem;
 
         @media (min-width: 768px) {
             font-size: 1.75rem;
         }
     }
-
-
 }
 
 footer {
@@ -722,4 +719,11 @@ footer {
         gap: 20rem;
         justify-content: center;
     }
+}
+
+/* ---------- Alertas ---------- */
+.alert-info {
+    --bs-alert-color: var(--text-color);
+    --bs-alert-bg: var(--surface-color);
+    --bs-alert-border-color: var(--border-color);
 }
