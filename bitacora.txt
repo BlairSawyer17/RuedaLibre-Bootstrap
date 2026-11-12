@@ -530,9 +530,6 @@ MIGRACIÓN DE TARIFAS Y RESERVAS A BOOTSTRAP: COMPARATIVA FINAL
     - El HTML queda más cargado de clases (por ejemplo "card bg-white h-100", "col-12 col-sm-6") y cuesta más leerlo a primera vista.
     - Hay que cuidar el orden de carga y la especificidad: bootstrap.css va después de Bootstrap y algunas utilidades (!important, como bg-white o rounded-3) ganan siempre.
     - Se depende de un CDN y hay que aprender los nombres de las clases y los breakpoints.
- 
-  Conclusión:
-    Bootstrap resuelve muy bien la distribución y los componentes repetitivos (grilla, formularios, tablas responsive), y dejar en bootstrap.css solo la identidad visual evita pelear con él. Aun así, la identidad (colores, tipografía, estados) y los ajustes al reboot siguen siendo CSS propio, por lo que lo más sensato es usar Bootstrap junto con CSS propio y no en lugar de él. Sinceramente, no soy muy buena con bootstrap, me cuesta un poco compaginar bootstrap con css y soy consiente de los errores que se tienen visualmente en esta versión beta 2-0; traté de emularlo lo más posible al css que tenía en un principio; pero me cuesta bastante por lo que tardé muchisimo más. Cuando yo hago páginas, por lo general estructuro el html pensando el css que haré después, por eso mis clases y estructura tienen un proposito claro que al pasarlo a bootstrap siento que fue un poco completo y difícil de emular.
 
 
 COMPROBACIÓN DE CAMPOS CON SCRIPT DE BOOTSTRAP:
@@ -540,3 +537,11 @@ COMPROBACIÓN DE CAMPOS CON SCRIPT DE BOOTSTRAP:
   -El campo del correo electrónico sigue aceptando correos sin la extensión, con tener el nombre del usuario, la arroba(@) y el dominio. El resto de los campos funcionan perfectamente.
 
   -Al darle enviar con alguno o varios campos mal, se marcan con rojo todos los campos que están mal. Sin embargo, al intentar envir el formulario con los datos bien sale un error 404 y aunque se recargue la página sigue sin funcionar; toca modificar la URL manualmente para regresar. 
+
+  RESUMEN SEMANA 2:
+
+    Bootstrap resuelve muy bien la distribución y los componentes repetitivos (grilla, formularios, tablas responsive), y dejar en bootstrap.css solo la identidad visual evita pelear con él. Aun así, la identidad (colores, tipografía, estados) y los ajustes al reboot siguen siendo CSS propio, por lo que lo más sensato es usar Bootstrap junto con CSS propio y no en lugar de él. Sinceramente, no soy muy buena con bootstrap, me cuesta un poco compaginar bootstrap con css y soy consiente de los errores que se tienen visualmente en esta versión beta 2-0; traté de emularlo lo más posible al css que tenía en un principio; pero me cuesta bastante por lo que tardé muchisimo más. Cuando yo hago páginas, por lo general estructuro el html pensando el css que haré después, por eso mis clases y estructura tienen un proposito claro que al pasarlo a bootstrap siento que fue un poco completo y difícil de emular. 
+
+    Para mi estilo de hacer las cosas, implementar bootstrap puede ser más tedioso ya que es un poco limitante en el control y yo prefiero modificar todo por lo que no me parece tan rentable salvo por algunas cosas como los scripts que maneja para los modales, los carruseles, las validaciones, alertas y demás; pero para el estilo de la página en general, en lo personal, me parece mejor seguir solo con CSS.
+
+    NOTA: No pude integrar las imágenes del antes y después de Rueda Libre de solo con Bootstrap y luego de Bootstrap con CSS porque mientras iba implementando Bootstrap iba cambiando las cosas en el CSS para adaptarlo al estilo de la versión 1.0.

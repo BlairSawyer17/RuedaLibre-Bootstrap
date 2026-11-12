@@ -577,9 +577,9 @@ textarea.form-control {
             display: none;
         }
 
-        img {
-            width: 2rem;
-            align-self: center;
+        i {
+            font-size: 2rem;
+            line-height: 1;
         }
 
         @media (min-width: 1200px) {
@@ -593,10 +593,6 @@ textarea.form-control {
 
             p {
                 display: revert;
-            }
-
-            img {
-                align-self: auto;
             }
         }
     }
@@ -721,7 +717,6 @@ footer {
     }
 }
 
-/* ---------- Alertas ---------- */
 .alert-info {
     --bs-alert-color: var(--text-color);
     --bs-alert-bg: var(--surface-color);
